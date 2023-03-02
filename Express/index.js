@@ -1,4 +1,7 @@
-const express = require('express');
+const express = require('express'),
+    //Morgan middlewar
+    morgan = require('morgan');
+
 const app = express();
 
 let topMovies = [
@@ -44,14 +47,17 @@ let topMovies = [
     }
 ];
 
+//invoke Morgan middleware function
+app.use(morgan('common'));
+
 //GET requests
 app.get('/', (req, res) => {
-    res.send('Welcome to my Flix!');
+    res.send('Welcome to myFlix!');
 });
 
 app.get('/movies', (req, res) => {
     res.json(topMovies);
 });
 
-//express.static
+//shorthand for app.use('/', express.static('public'))
 app.use(express.static('public'));
