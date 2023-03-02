@@ -61,3 +61,7 @@ app.get('/movies', (req, res) => {
 
 //shorthand for app.use('/', express.static('public'))
 app.use(express.static('public'));
+
+app.listen(8080, () => {
+    console.log('Your app is listening on port 8080.');
+});
