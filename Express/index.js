@@ -67,6 +67,11 @@ let topMovies = [
     }
 ];
 
+//READ
+app.get('/movies', (req, res) => {
+    res.status(200).json(movies);
+});
+
 //invoke Morgan middleware function
 app.use(morgan('common'));
 
@@ -82,6 +87,6 @@ app.get('/movies', (req, res) => {
 //shorthand for app.use('/', express.static('public'))
 app.use(express.static('public'));
 
-app.listen(8080, () => {
-    console.log('Your app is listening on port 8080.');
-});
+app.listen(8080, () => 
+    console.log('Your app is listening on port 8080.')
+);
