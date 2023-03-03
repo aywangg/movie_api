@@ -1,9 +1,29 @@
 const express = require('express'),
+    app = express(),
     //Morgan middlewar
-    morgan = require('morgan');
+    morgan = require('morgan'),
+    //uuid module
+    uuid = require('uuid'),
+    bodyParser = require('body-parser');
 
-const app = express();
+app.use(bodyParser.json());
 
+let users = [
+    {
+        id: 1,
+        name: "Zack",
+        favoriteMovies:["Top Gun"]
+    },
+    {
+        id: 1,
+        name: "Dylan",
+        favoriteMovies: ["Avengers: Infinity War"]
+    },
+];
+
+let movies = [];
+
+//top 10 movies
 let topMovies = [
     {
         title: 'Hacksaw Ridge',
