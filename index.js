@@ -13,7 +13,7 @@ let users = [
     {
         id: 1,
         name: "Zack",
-        favoriteMovies:["Top Gun"]
+        favoriteMovies:[]
     },
     {
         id: 1,
@@ -142,6 +142,35 @@ app.put('/users/:id', (req, res) => {
         res.status(400).send('no such user')
     }
 });
+
+//CREATE
+app.post('/users/:id/:movieTitle', (req, res) => {
+    const { id, movieTitle } = req.params;
+    
+    let user = users.find( user => user.id == id );
+
+    if (user) {
+        user.favoriteMovies.push(movieTitle);
+        res.status(200).send;
+    } else {
+        res.status(400).send('no such user')
+    }
+});
+
+//DELETE
+app.delete('/users/:id/:movieTitle', (req, res) => {
+    const { id, movieTitle } = req.params;
+    
+    let user = users.find( user => user.id == id );
+
+    if (user) {
+        user.favoriteMovies = user.favoriteMovies.filter( title => title !== movieTitle);
+        res.status(200).send;
+    } else {
+        res.status(400).send('no such user')
+    }
+});
+
 //READ
 app.get('/movies', (req, res) => {
     res.status(200).json(movies);
