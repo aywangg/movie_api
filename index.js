@@ -8,6 +8,7 @@ const express = require('express'),
 
 app.use(bodyParser.json());
 
+//2 example users
 let users = [
     {
         id: 1,
@@ -21,6 +22,7 @@ let users = [
     },
 ];
 
+//3 movies with dsx, genres, directors, etc
 let movies = [
     {
         "Title": "12 Strong",
@@ -116,6 +118,30 @@ let topMovies = [
 //READ
 app.get('/movies', (req, res) => {
     res.status(200).json(movies);
+});
+
+//READ
+app.get('/movies/:title', (req, res) => {
+    const { title } = req.params;
+    const movie = movies.find( movie => movie.Title === title );
+
+    if (movie) {
+        res.status(200).json(movie);
+    } else {
+        res.status(400).send('no such movie')
+    }
+});
+
+//READ
+app.get('/movies/genre/:genreName', (req, res) => {
+    const { genreName } = req.params;
+    const genre = movies.find( movie => movie.Genre.Name === genreName ).Genre;
+
+    if (genre) {
+        res.status(200).json(genre);
+    } else {
+        res.status(400).send('no such genre')
+    }
 });
 
 //invoke Morgan middleware function
