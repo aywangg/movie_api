@@ -4,7 +4,12 @@ const express = require('express'),
     morgan = require('morgan'),
     //uuid module
     uuid = require('uuid'),
-    bodyParser = require('body-parser');
+    bodyParser = require('body-parser'),
+    //requring Mongoose package and models.js file
+    mongoose = require('mongoose'),
+    Models = require('./models.js')
+    Movies = Models.Movie,
+    Users = Models.User;
 
 app.use(bodyParser.json());
 
@@ -240,6 +245,8 @@ app.get('/movies', (req, res) => {
 
 //shorthand for app.use('/', express.static('public'))
 app.use(express.static('public'));
+
+mongoose.connect('mongodb://localhost:27017/test', {useNewUrlParser: true, useUnifiedTopology: true});
 
 app.listen(8080, () => 
     console.log('Your app is listening on port 8080.')
