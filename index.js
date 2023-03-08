@@ -18,21 +18,32 @@ app.use(bodyParser.json());
 //integrating REST API and db
 mongoose.connect('mongodb://localhost:27017/test', {useNewUrlParser: true, useUnifiedTopology: true});
 
-//2 example users
+//users
 let users = [
     {
-        id: 1,
-        name: "Zack",
+        Username: "zackm2",
+        Password: "password123",
+        Email: "newemail20@yahoo.com",
+        Birthday: 1998-09-10
         favoriteMovies:[]
     },
     {
-        id: 2,
-        name: "Dylan",
-        favoriteMovies: ["Thor"]
+        Username: "ricardofresh",
+        Password: "pwpwpw",
+        Email: "freshrico@gmail.com",
+        Birthday: 1983-05-01
+        favoriteMovies:[]
     },
+    {
+        Username: "hayjosh",
+        Password: "xyzxyz123",
+        Email: "jooshhay@gmail.com",
+        Birthday: 1998-12-20
+        favoriteMovies:[]
+    }
 ];
 
-//3 movies with dsx, genres, directors, etc
+//movies with dsx, genres, directors, etc
 let movies = [
     {
         "Title": "12 Strong",
