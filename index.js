@@ -174,7 +174,7 @@ let movies = [
         "Description": "In 1939, newly created British intelligence agency MI6 recruits Cambridge mathematics alumnus Alan Turing (Benedict Cumberbatch) to crack Nazi codes, including Enigma -- which cryptanalysts had thought unbreakable. Turing's team, including Joan Clarke, analyze Enigma messages while he builds a machine to decipher them. Turing and team finally succeed and become heroes, but in 1952, the quiet genius encounters disgrace when authorities reveal he is gay and send him to prison.",
         "Genre": {
             "Name": "Drama",
-            "Description": "War film is a film genre concerned with warfare, typically about naval, air, or land battles, with combat scenes central to the drama."
+            "Description": "Drama film is a genre that relies on the emotional and relational development of realistic characters. While Drama film relies heavily on this kind of development, dramatic themes play a large role in the plot as well."
         },
         "Director": {
             "Name": "Morten Tyldum",
@@ -184,50 +184,6 @@ let movies = [
         "ImageURL": "https://m.media-amazon.com/images/M/MV5BOTgwMzFiMWYtZDhlNS00ODNkLWJiODAtZDVhNzgyNzJhYjQ4L2ltYWdlXkEyXkFqcGdeQXVyNzEzOTYxNTQ@._V1_.jpg",
         "Featured":true
     },
-];
-
-//top 10 movies
-let topMovies = [
-    {
-        title: 'Hacksaw Ridge',
-        director: 'Mel Gibson'
-    },
-    {
-        title: 'Fury',
-        director: 'David Ayer'
-    },
-    {
-        title: 'Midway',
-        director: 'Roland Emmerich'
-    },
-    {
-        title: 'Dunkirk',
-        director: 'Christopher Nolan'
-    },
-    {
-        title: 'Greyhound',
-        director: 'Aaron Schneider'
-    },
-    {
-        title: 'The Imitation Game',
-        director: 'Morten Tyldum'
-    },
-    {
-        title: 'Saving Private Ryan',
-        director: 'Steven Spielberg'
-    },
-    {
-        title: 'Letters From Iwo Jima',
-        director: 'Clint Eastwood'
-    },
-    {
-        title: 'Valkyrie',
-        director: 'Bryan Singer'
-    },
-    {
-        title: 'Flags of Our Fathers',
-        director: 'Clint Eastwood'
-    }
 ];
 
 //CREATE
