@@ -283,8 +283,15 @@ app.delete('/users/:id', (req, res) => {
 
 //READ
 app.get('/movies', (req, res) => {
-    res.status(200).json(movies);
-});
+    Users.find()
+      .then((movies) => {
+        res.status(201).json(movies);
+      })
+      .catch((err) => {
+        console.error(err);
+        res.status(500).send('Error: ' + err);
+      });
+  });
 
 //READ
 app.get('/movies/:title', (req, res) => {
