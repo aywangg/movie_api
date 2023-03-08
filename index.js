@@ -66,7 +66,7 @@ let movies = [
             "Bio": "Clinton Eastwood Jr. is an American actor and film director. After achieving success in the Western TV series Rawhide, he rose to international fame with his role as the 'Man with No Name' in Sergio Leone's 'Dollars Trilogy' of Spaghetti Westerns during the mid-1960s and as antihero cop Harry Callahan in the five Dirty Harry films throughout the 1970s and 1980s.",
             "Birth": "1930 San Francisco, California"
         },
-        "ImageURL": "",
+        "ImageURL": "https://m.media-amazon.com/images/M/MV5BMTkxNzI3ODI4Nl5BMl5BanBnXkFtZTgwMjkwMjY4MjE@._V1_.jpg",
         "Featured":true
     },
 ];

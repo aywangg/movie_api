@@ -1,0 +1,3 @@
+{"_id":{"$oid":"6406e6a69bf833f763636887"},"Username":"hayjosh","Password":"xyzxyz123","Email":"jooshay@gmail.com","Birthdate":"19998-12-20"}
+{"_id":{"$oid":"6406e7899bf833f763636889"},"Username":"zackm2","Password":"password123","Email":"zackm246@yahoo.com","Birthdate":"1998-09-20"}
+{"_id":{"$oid":"6406e8ac9bf833f76363688b"},"Username":"meesh","Password":"seasamecakes","Email":"itsmeesh007@yahoo.com","Birthdate":"1994-04-16","FavoriteMovies":[{"$oid":"6406d0a79bf833f76363687f"}]}
