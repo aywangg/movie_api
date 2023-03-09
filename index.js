@@ -202,6 +202,11 @@ let movies = [
     },
 ];
 
+//READ welcome message
+app.get('/', (req, res) => {
+  res.send('Welcome to myFlix!');
+});
+
 //CREATE a new user
 app.post('/users', (req, res) => {
     Users.findOne({ Username: req.body.Username })
@@ -302,7 +307,7 @@ app.delete('/users/:Username', (req, res) => {
 
 //READ all movies
 app.get('/movies', (req, res) => {
-    Users.find()
+    Movies.find()
       .then((movies) => {
         res.status(201).json(movies);
       })
@@ -313,7 +318,7 @@ app.get('/movies', (req, res) => {
   });
 
 //READ movie by movie title
-app.get('/movies/:title', (req, res) => {
+app.get('/movies/:Title', (req, res) => {
     Movies.findOne({ Title: req.params.Title })
       .then((movie) => {
         res.json(movie);
@@ -325,34 +330,27 @@ app.get('/movies/:title', (req, res) => {
   });
 
 //READ genre by genre name
-app.get('/movies/genre/:genreName',
-    (req, res) => {
-       const { genreName } = req.params;
-       const genre = movies.find(movie => movie.Genre.Name === genreName).Genre;
- 
-       if (genre) {
-          res.status(200).json(genre);
-       } else {
-          res.status(400).send("No such genre found!");
-       }
-    }
- );
+app.get('/movies/genre/:Name', (req, res) => {
+  Movies.findOne({ 'Genre.Name': req.params.Name })
+    .then((movies) => {
+      res.send(movies.Genre);
+    })
+    .catch((err) => {
+      console.error(err);
+      res.status(500).send('Error: ' + err);
+    });
+});
 
 //READ director by director name
 app.get('/movies/directors/:directorName', (req, res) => {
-    const { directorName } = req.params;
-    const director = movies.find( movie => movie.Director.Name === directorName ).Director;
-
-    if (director) {
-        res.status(200).json(director);
-    } else {
-        res.status(400).send('no such director')
-    }
-});
-
-//READ welcome message
-app.get('/', (req, res) => {
-    res.send('Welcome to myFlix!');
+  Movies.findOne({ 'Director.Name': req.params.directorName })
+    .then((movies) => {
+      res.send(movies.Director);
+    })
+    .catch((err) => {
+      console.error(err);
+      res.status(500).send('Error: ' + err);
+    });
 });
 
 app.listen(8080, () => 
