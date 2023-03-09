@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 
+
 let movieSchema = mongoose.Schema({
     Title: { type: String, required:true},
     Description: { type: String, required: true},
@@ -25,7 +26,7 @@ let userSchema = mongoose.Schema({
 });
 
 let Movie = mongoose.model('Movie', movieSchema);
-let user = mongoose.model('User', userSchema);
+let Users = mongoose.model('User', userSchema);
 
 module.exports.Movie = Movie;
-module.exports.User = User;
+module.exports.User = Users;
