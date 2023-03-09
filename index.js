@@ -353,6 +353,18 @@ app.get('/users', (req, res) => {
     });
 });
 
+//GET specific user by username
+app.get('/users/:Username', (req, res) => {
+  Users.findOne({ Username: req.params.Username })
+    .then((users) => {
+      res.status(201).json(users);
+    })
+    .catch((err) => {
+      console.error(err);
+      res.status(500).send('Error: ' + err);
+    });
+});
+
 //READ director by director name
 app.get('/movies/directors/:directorName', (req, res) => {
   Movies.findOne({ 'Director.Name': req.params.directorName })
