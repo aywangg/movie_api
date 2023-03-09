@@ -341,6 +341,18 @@ app.get('/movies/genre/:Name', (req, res) => {
     });
 });
 
+//GET all users
+app.get('/users', (req, res) => {
+  Users.find()
+    .then((users) => {
+      res.status(201).json(users);
+    })
+    .catch((err) => {
+      console.error(err);
+      res.status(500).send('Error: ' + err);
+    });
+});
+
 //READ director by director name
 app.get('/movies/directors/:directorName', (req, res) => {
   Movies.findOne({ 'Director.Name': req.params.directorName })
