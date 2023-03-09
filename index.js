@@ -8,6 +8,11 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+let auth = require('/auth')(app);
+
+const passport = require('passport');
+require('./passport');
+
 //invoke Morgan middleware function
 app.use(morgan('common'));
 
@@ -20,6 +25,8 @@ const mongoose = require('mongoose');
 const Models = require('./models.js');
 const Movies = Models.Movie;
 const Users = Models.User;
+const Genres = Models.Genre;
+const Directors = Models.Director;
 
 
 //integrating REST API and db
