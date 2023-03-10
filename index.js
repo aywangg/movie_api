@@ -22,6 +22,8 @@ app.use(express.static('public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+const cors = require('cors');
+app.use(cors());
 let auth = require('./auth')(app);
 const passport = require('passport');
 require('./passport');
@@ -214,14 +216,15 @@ app.get('/', (req, res) => {
 
 //CREATE a new user CHECKED
 app.post('/users', (req, res) => {
-    Users.findOne({ Username: req.body.Username })
+  let hashedPassword = Users.hashPassword(req.body.Password);  
+  Users.findOne({ Username: req.body.Username })
       .then((users) => {
         if (users) {
           return res.status(400).send(req.body.Username + 'already exists');
         } else {
           Users.create({
               Username: req.body.Username,
-              Password: req.body.Password,
+              Password: hashedPassword,
               Email: req.body.Email,
               Birthday: req.body.Birthday
             })
