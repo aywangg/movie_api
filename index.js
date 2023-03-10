@@ -208,12 +208,12 @@ let movies = [
 ];
 
 //READ welcome message CHECKED
-app.get('/', passport.authenticate, (req, res) => {
+app.get('/', (req, res) => {
   res.send('Welcome to myFlix!');
 });
 
 //CREATE a new user CHECKED
-app.post('/users', passport.authenticate('jwt', { session: false }), (req, res) => {
+app.post('/users', (req, res) => {
     Users.findOne({ Username: req.body.Username })
       .then((users) => {
         if (users) {
