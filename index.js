@@ -32,7 +32,7 @@ require('./passport');
 
 //integrating REST API and db
 //mongoose.connect('mongodb://127.0.0.1:27017/test', {
-mongoose.connect(process.env.PORT, 
+mongoose.connect(process.env.CONNECTION_URI, 
 {
   useNewUrlParser: true, useUnifiedTopology: true
 });
