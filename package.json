@@ -1,10 +1,6 @@
 {
   "name": "movie_api",
   "version": "1.0.0",
-  "engines": {
-    "node": "19.7.0",
-    "npm": "9.5.0"
-  },
   "description": "This is a Movie API built to allow users to access different movies, directors, and genres.",
   "main": "index.js",
   "scripts": {
