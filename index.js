@@ -73,7 +73,7 @@ let movies = [
             "Bio": "Nicolai Fuglsig is a Danish film director and photojournalist. He graduated from the Danish School of Journalism. In 1999, his book on an untold nuclear disaster won the ICP Infinity Award in New York City and the World Press Photo First Prize, as well as the Kodak prize for Best Photographer Under 30.",
             "Birth": "1972"
         },
-        "ImageURL": "https://www2.pictures.gi.zimbio.com/60th+Annual+DGA+Awards+Press+Room+IbIk9KmbnE_x.jpg",
+        "ImageURL": "https://m.media-amazon.com/images/M/MV5BNTEzMjk3NzkxMV5BMl5BanBnXkFtZTgwNjY2NDczNDM@._V1_.jpg",
         "Featured":true
     },
     {
@@ -88,7 +88,7 @@ let movies = [
             "Bio": "Michael Benjamin Bay is an American film director and producer. He is best known for directing high-budget action films characterized by fast edits, polished visuals and substantial use of practical effects.",
             "Birth": "1965"
         },
-        "ImageURL": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F6%2F2023%2F01%2F13%2FMichael-Bay-Pigeon-Italy-01-011223.jpg",
+        "ImageURL": "https://m.media-amazon.com/images/M/MV5BYjY0OWVjMGQtNTIzZi00OGU5LWI4N2EtMGU0YzQ4OWM4ZmVhXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_FMjpg_UX1000_.jpg",
         "Featured":true
     },
     {
@@ -118,7 +118,7 @@ let movies = [
             "Bio": "Clinton Eastwood Jr. is an American actor and film director. After achieving success in the Western TV series Rawhide, he rose to international fame with his role as the 'Man with No Name' in Sergio Leone's 'Dollars Trilogy' of Spaghetti Westerns during the mid-1960s and as antihero cop Harry Callahan in the five Dirty Harry films throughout the 1970s and 1980s.",
             "Birth": "1930"
         },
-        "ImageURL": "https://m.media-https://img.hulu.com/user/v3/artwork/3d1c37d7-6f26-4100-8f19-6e74d0fa6edd?base_image_bucket_name=image_manager&base_image=9b7af329-349d-4822-b603-f920b4b989f0&size=1200x630&format=jpeg&operations=%5B%7B%22gradient_vector%22%3A%22(0%2C0%2C0%2C0.5)%7C(0%2C0%2C0%2C0)%7C(0%2C600)%7C(0%2C240)%22%7D%2C%7B%22overlay%22%3A%7B%22position%22%3A%22SouthEast%7C(30%2C30)%22%2C%22operations%22%3A%5B%7B%22image%22%3A%22image_manager%7Ca82a93a7-1db2-4727-b79d-f1475dde344b%22%7D%2C%7B%22resize%22%3A%22204x204%7Cmax%22%7D%2C%7B%22extent%22%3A%22204x204%22%7D%5D%7D%7D%2C%5D.com/images/M/MV5BMTkxNzI3ODI4Nl5BMl5BanBnXkFtZTgwMjkwMjY4MjE@._V1_.jpg",
+        "ImageURL": "https://upload.wikimedia.org/wikipedia/en/8/87/Letters_from_Iwo_Jima.jpg",
         "Featured":true
     },
     {
