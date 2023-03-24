@@ -1,5 +1,6 @@
 //importing all local packages needed
 const express = require('express');
+const dotenv = require('dotenv');
 const bodyParser = require('body-parser');
 const uuid = require('uuid');
 const morgan = require('morgan');
@@ -7,6 +8,8 @@ const app = express();
 const mongoose = require('mongoose');
 //requring Mongoose package and models.js file
 const Models = require('./models.js');
+
+dotenv.config();
 
 const Movies = Models.Movie;
 const Users = Models.User;
@@ -32,7 +35,7 @@ require('./passport');
 
 //integrating REST API and db
 //mongoose.connect('mongodb://127.0.0.1:27017/test', {
-mongoose.connect(process.env.CONNECTION_URI, 
+mongoose.connect('mongodb+srv://aywangg:Nitsua528@aywangg.dtfv6gy.mongodb.net/?retryWrites=true&w=majority', 
 {
   useNewUrlParser: true, useUnifiedTopology: true
 });
@@ -352,7 +355,7 @@ app.delete('/users/:Username/movies/:MovieID',passport.authenticate('jwt', { ses
  );
 
 //READ all movies CHECKED
-app.get('/movies', //passport.authenticate('jwt', { session: false }), 
+app.get('/movies', passport.authenticate('jwt', { session: false }), 
   (req, res) => {
     Movies.find()
       .then((movies) => {
@@ -400,11 +403,7 @@ app.get('/movies/directors/:directorName', passport.authenticate('jwt', { sessio
     });
 });
 
-//const port = process.env.PORT || 8080;
-//app.listen(port, '0.0.0.0',() => {
- //console.log('Listening on Port ' + port);
-
-
-app.listen(8080, () => {
-  console.log('Your app is listening on port 8080');
+const port = process.env.PORT || 8080;
+app.listen(port, '0.0.0.0',() => {
+ console.log('Listening on Port ' + port);
 });
