@@ -13,8 +13,6 @@ dotenv.config();
 
 const Movies = Models.Movie;
 const Users = Models.User;
-const Genres = Models.Genre;
-const Directors = Models.Director;
 
 //invoke Morgan middleware function
 app.use(morgan('common'));
@@ -35,10 +33,8 @@ require('./passport');
 
 //integrating REST API and db
 //mongoose.connect('mongodb://127.0.0.1:27017/test', {
-mongoose.connect('mongodb+srv://aywangg:Nitsua528@aywangg.dtfv6gy.mongodb.net/?retryWrites=true&w=majority', 
-{
-  useNewUrlParser: true, useUnifiedTopology: true
-});
+//mongoose.connect('mongodb+srv://aywangg:Nitsua528@aywangg.dtfv6gy.mongodb.net/?retryWrites=true&w=majority',
+mongoose.connect( process.env.CONNECTION_URI, { useNewUrlParser: true, useUnifiedTopology: true });
 
 //users
 let users = [
@@ -355,8 +351,7 @@ app.delete('/users/:Username/movies/:MovieID',passport.authenticate('jwt', { ses
  );
 
 //READ all movies CHECKED
-app.get('/movies', passport.authenticate('jwt', { session: false }), 
-  (req, res) => {
+app.get('/movies', passport.authenticate('jwt', { session: false }), (req, res) => {
     Movies.find()
       .then((movies) => {
         res.status(201).json(movies);
