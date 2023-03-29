@@ -33,8 +33,8 @@ require('./passport');
 
 //integrating REST API and db
 //mongoose.connect('mongodb://127.0.0.1:27017/test', {
-mongoose.connect('mongodb+srv://aywangg:Nitsua528@aywangg.dtfv6gy.mongodb.net/?retryWrites=true&w=majority',
-//mongoose.connect( process.env.CONNECTION_URI, 
+//mongoose.connect('mongodb+srv://aywangg:Nitsua528@aywangg.dtfv6gy.mongodb.net/?retryWrites=true&w=majority',
+mongoose.connect( process.env.CONNECTION_URI, 
 { useNewUrlParser: true, useUnifiedTopology: true });
 
 //users
